@@ -1,0 +1,14 @@
+{
+  "resourceName": "daveg123",
+  "policyUUID": "13b35cf6",
+  "bucketName": "chloe",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
