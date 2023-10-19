@@ -101,13 +101,13 @@ const App = ({ signOut }) => {
         </Flex>
       </View>
       <Heading level={1}>Current Notes</Heading>
+      <table border="0.5px" align="center"><tbody><tr><td> 
       <p><Text as = "strong" color = {'#FFA500'}> The voices are telling me things </Text></p>
       <ul>
       <li><Text as = "strong" fontSize = {30} color = {'#C0C0C0'}> What's going on</Text></li>
       <li> <a href = "https://youtube.com/@davidgalotto9768?si=wMrV2CuVp3ZomGU4">The greatest YouTube channel ever</a> </li>
-      
       </ul>
-      
+     
       <View margin="3rem 0">
         {notes.map((note) => (
           <Flex
@@ -132,7 +132,9 @@ const App = ({ signOut }) => {
             </Button>
           </Flex>
         ))}
-      </View>
+        
+      
+      </View></td></tr></tbody></table>
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
