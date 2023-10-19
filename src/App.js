@@ -100,7 +100,14 @@ const App = ({ signOut }) => {
           </Button>
         </Flex>
       </View>
-      <Heading level={2}>Current Notes</Heading>
+      <Heading level={1}>Current Notes</Heading>
+      <p><Text as = "strong" color = {'#FFA500'}> The voices are telling me things </Text></p>
+      <ul>
+      <li><Text as = "strong" fontSize = {30} color = {'#C0C0C0'}> What's going on</Text></li>
+      <li> <a href = "https://youtube.com/@davidgalotto9768?si=wMrV2CuVp3ZomGU4">The greatest YouTube channel ever</a> </li>
+      
+      </ul>
+      
       <View margin="3rem 0">
         {notes.map((note) => (
           <Flex
@@ -117,11 +124,11 @@ const App = ({ signOut }) => {
       <Image
         src={note.image}
         alt={`visual aid for ${notes.name}`}
-        style={{ width: 400 }}
+        style={{ width: 80 }}
       />
     )}
             <Button variation="link" onClick={() => deleteNote(note)}>
-              Delete note
+              <Text as = "strong" fontSize = {50}> Delete Me </Text>
             </Button>
           </Flex>
         ))}
