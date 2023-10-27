@@ -105,7 +105,7 @@ const App = ({ signOut }) => {
       <p><Text as = "strong" color = {'#FFA500'}> The Lunatic is in my Head </Text></p>
       <ul>
       <li><Text as = "strong" fontSize = {30} color = {'#C0C0C0'}> Have a Cigar</Text></li>
-      <li> <a href = "https://youtube.com/@davidgalotto9768?si=wMrV2CuVp3ZomGU4">The greatest YouTube channel ever</a> </li>
+      <li> <a href = "george.html">QUOTES</a> </li>
       </ul>
      
       <View margin="3rem 0">
