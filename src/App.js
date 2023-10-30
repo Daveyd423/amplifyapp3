@@ -102,9 +102,9 @@ const App = ({ signOut }) => {
       </View>
       <Heading level={1}>Current Notes</Heading>
       <table border="0.5px" align="center"><tbody><tr><td> 
-      <p><Text as = "strong" color = {'#FFA500'}> The Lunatic is in my Head </Text></p>
+      <p><Text as = "strong" color = {'#FFA500'}> Time </Text></p>
       <ul>
-      <li><Text as = "strong" fontSize = {30} color = {'#C0C0C0'}> Have a Cigar</Text></li>
+      <li><Text as = "strong" fontSize = {30} color = {'#C0C0C0'}> Money</Text></li>
       <li> <a href = "george.html">QUOTES</a> </li>
       <li> <a href = "home.html">WEDDING</a> </li>
       </ul>
