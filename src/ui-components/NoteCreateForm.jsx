@@ -7,8 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { createNote } from "../graphql/mutations";
 export default function NoteCreateForm(props) {
@@ -24,10 +23,12 @@ export default function NoteCreateForm(props) {
   } = props;
   const initialValues = {
     name: "",
+    author: "",
     description: "",
     image: "",
   };
   const [name, setName] = React.useState(initialValues.name);
+  const [author, setAuthor] = React.useState(initialValues.author);
   const [description, setDescription] = React.useState(
     initialValues.description
   );
@@ -35,12 +36,14 @@ export default function NoteCreateForm(props) {
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setName(initialValues.name);
+    setAuthor(initialValues.author);
     setDescription(initialValues.description);
     setImage(initialValues.image);
     setErrors({});
   };
   const validations = {
     name: [{ type: "Required" }],
+    author: [],
     description: [],
     image: [],
   };
@@ -71,6 +74,7 @@ export default function NoteCreateForm(props) {
         event.preventDefault();
         let modelFields = {
           name,
+          author,
           description,
           image,
         };
@@ -136,6 +140,7 @@ export default function NoteCreateForm(props) {
           if (onChange) {
             const modelFields = {
               name: value,
+              author,
               description,
               image,
             };
@@ -153,6 +158,33 @@ export default function NoteCreateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
+        label="Author"
+        isRequired={false}
+        isReadOnly={false}
+        value={author}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              author: value,
+              description,
+              image,
+            };
+            const result = onChange(modelFields);
+            value = result?.author ?? value;
+          }
+          if (errors.author?.hasError) {
+            runValidationTasks("author", value);
+          }
+          setAuthor(value);
+        }}
+        onBlur={() => runValidationTasks("author", author)}
+        errorMessage={errors.author?.errorMessage}
+        hasError={errors.author?.hasError}
+        {...getOverrideProps(overrides, "author")}
+      ></TextField>
+      <TextField
         label="Description"
         isRequired={false}
         isReadOnly={false}
@@ -162,6 +194,7 @@ export default function NoteCreateForm(props) {
           if (onChange) {
             const modelFields = {
               name,
+              author,
               description: value,
               image,
             };
@@ -188,6 +221,7 @@ export default function NoteCreateForm(props) {
           if (onChange) {
             const modelFields = {
               name,
+              author,
               description,
               image: value,
             };
