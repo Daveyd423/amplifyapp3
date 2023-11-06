@@ -90,6 +90,7 @@ const App = ({ signOut, user }) => {
       <li><Text as = "strong" fontSize = {30} color = {'#C0C0C0'}> Money</Text></li>
       <li> <a href = "george.html">QUOTES</a> </li>
       <li> <a href = "home.html">WEDDING</a> </li>
+      <li> <a href = "trynew.html">trynew</a> </li>
       </ul>
      
       <View margin="3rem 0">
