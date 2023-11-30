@@ -7,6 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
+import MyIcon from "./MyIcon";
 import {
   Button,
   Divider,
@@ -46,6 +47,20 @@ export default function UINewNote(props) {
         padding="24px 24px 24px 24px"
         {...getOverrideProps(overrides, "Content")}
       >
+        <MyIcon
+          width="24px"
+          height="24px"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          overflow="hidden"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          type="arrow-right"
+          {...getOverrideProps(overrides, "MyIcon")}
+        ></MyIcon>
         <Flex
           gap="16px"
           direction="row"
@@ -172,8 +187,8 @@ export default function UINewNote(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Upload New Image"
-            {...getOverrideProps(overrides, "Upload New Image")}
+            children="David Galotto"
+            {...getOverrideProps(overrides, "David Galotto")}
           ></Text>
         </Flex>
         <Flex
@@ -192,41 +207,15 @@ export default function UINewNote(props) {
           <TextField
             width="unset"
             height="unset"
-            label="name"
             placeholder="John Doe"
             shrink="0"
             alignSelf="stretch"
+            label=""
             size="default"
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField4046573")}
-          ></TextField>
-          <TextField
-            width="unset"
-            height="unset"
-            label="description"
-            placeholder="Seattle, WA"
-            shrink="0"
-            alignSelf="stretch"
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "TextField4046574")}
-          ></TextField>
-          <TextField
-            width="unset"
-            height="unset"
-            label="image"
-            placeholder="john.doe@awsamplify.com"
-            shrink="0"
-            alignSelf="stretch"
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "TextField4046575")}
+            {...getOverrideProps(overrides, "TextField")}
           ></TextField>
         </Flex>
         <Divider

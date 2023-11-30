@@ -5,11 +5,13 @@
  **************************************************************************/
 
 export { default as MyIcon } from "./MyIcon";
+export { default as MyIconinfo } from "./MyIconinfo";
 export { default as NoteCard } from "./NoteCard";
 export { default as NoteCollection } from "./NoteCollection";
 export { default as NoteCreateForm } from "./NoteCreateForm";
 export { default as NoteNavBar } from "./NoteNavBar";
 export { default as NoteUpdateForm } from "./NoteUpdateForm";
+export { default as Profilepage } from "./Profilepage";
 export { default as UIEditNote } from "./UIEditNote";
 export { default as UINewNote } from "./UINewNote";
 export { default as studioTheme } from "./studioTheme";

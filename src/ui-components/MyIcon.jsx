@@ -36,21 +36,6 @@ export default function MyIcon(props) {
         MyIcon: {
           paths: [
             {
-              d: "M9 5L11 5L11 7L9 7L9 5ZM9 9L11 9L11 15L9 15L9 9ZM10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z",
-              fill: "rgba(13,26,38,1)",
-              fillRule: "nonzero",
-              style: { transform: "translate(8.33%, 8.33%)" },
-            },
-          ],
-        },
-      },
-      variantValues: { type: "info" },
-    },
-    {
-      overrides: {
-        MyIcon: {
-          paths: [
-            {
               d: "M2 2L18 2L18 14L3.17 14L2 15.17L2 2ZM2 0C0.9 0 0.00999999 0.9 0.00999999 2L0 20L4 16L18 16C19.1 16 20 15.1 20 14L20 2C20 0.9 19.1 0 18 0L2 0ZM4 10L12 10L12 12L4 12L4 10ZM4 7L16 7L16 9L4 9L4 7ZM4 4L16 4L16 6L4 6L4 4Z",
               fill: "rgba(13,26,38,1)",
               fillRule: "nonzero",
@@ -150,6 +135,36 @@ export default function MyIcon(props) {
         },
       },
       variantValues: { type: "arrow-right" },
+    },
+    {
+      overrides: {
+        MyIcon: {
+          paths: [
+            {
+              d: "M8 0L6.59 1.41L12.17 7L0 7L0 9L12.17 9L6.59 14.59L8 16L16 8L8 0Z",
+              fill: "rgba(13,26,38,1)",
+              fillRule: "nonzero",
+              style: { transform: "translate(16.67%, 16.67%)" },
+            },
+          ],
+        },
+      },
+      variantValues: { type: "type22" },
+    },
+    {
+      overrides: {
+        MyIcon: {
+          paths: [
+            {
+              d: "M8 0L6.59 1.41L12.17 7L0 7L0 9L12.17 9L6.59 14.59L8 16L16 8L8 0Z",
+              fill: "rgba(13,26,38,1)",
+              fillRule: "nonzero",
+              style: { transform: "translate(16.67%, 16.67%)" },
+            },
+          ],
+        },
+      },
+      variantValues: { type: "type21" },
     },
     {
       overrides: {
