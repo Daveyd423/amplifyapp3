@@ -14,6 +14,8 @@ export default function NoteNavBar(props) {
     type: "url",
     url: "/new",
   });
+  const starOneOnClick = useNavigateAction({ type: "url", url: "/new" });
+  const companyOnClick = useNavigateAction({ type: "url", url: "/edit" });
   return (
     <View
       width="320px"
@@ -75,6 +77,9 @@ export default function NoteNavBar(props) {
             justifyContent="unset"
             shrink="0"
             position="relative"
+            onClick={() => {
+              starOneOnClick();
+            }}
             {...getOverrideProps(overrides, "Star 1")}
           ></Icon>
           <Text
@@ -134,6 +139,9 @@ export default function NoteNavBar(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Company"
+            onClick={() => {
+              companyOnClick();
+            }}
             {...getOverrideProps(overrides, "Company")}
           ></Text>
         </Flex>

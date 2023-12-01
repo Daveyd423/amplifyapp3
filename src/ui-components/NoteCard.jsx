@@ -107,7 +107,7 @@ export default function NoteCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="4bds 3 ba 2,530 sqft - Active"
+            children={note?.description}
             {...getOverrideProps(overrides, "4bds 3 ba 2,530 sqft - Active")}
           ></Text>
           <Text
@@ -129,7 +129,7 @@ export default function NoteCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="832 34th Ave, Seattle, WA 98122"
+            children={note?.author}
             {...getOverrideProps(overrides, "832 34th Ave, Seattle, WA 98122")}
           ></Text>
         </Flex>

@@ -20,28 +20,28 @@ import {
   TextField,
   View,
 } from "@aws-amplify/ui-react";
-export default function UIEditNote(props) {
+export default function UICreateNote(props) {
   const { note, overrides, ...rest } = props;
   const [
-    textFieldFourZeroFourSixSixOneTwoValue,
-    setTextFieldFourZeroFourSixSixOneTwoValue,
+    textFieldFourZeroNineThreeOneFiveTwoSixValue,
+    setTextFieldFourZeroNineThreeOneFiveTwoSixValue,
   ] = useState("");
   const [
-    textFieldFourZeroFourSixSixOneThreeValue,
-    setTextFieldFourZeroFourSixSixOneThreeValue,
+    textFieldFourZeroNineThreeOneFiveTwoSevenValue,
+    setTextFieldFourZeroNineThreeOneFiveTwoSevenValue,
   ] = useState("");
   const [
-    textFieldFourZeroFourSixSixOneFourValue,
-    setTextFieldFourZeroFourSixSixOneFourValue,
+    textFieldFourZeroNineThreeOneFiveTwoEightValue,
+    setTextFieldFourZeroNineThreeOneFiveTwoEightValue,
   ] = useState("");
   const buttonOnClick = async () => {
     await API.graphql({
       query: updateNote.replaceAll("__typename", ""),
       variables: {
         input: {
-          name: textFieldFourZeroFourSixSixOneTwoValue,
-          author: textFieldFourZeroFourSixSixOneThreeValue,
-          description: textFieldFourZeroFourSixSixOneFourValue,
+          name: textFieldFourZeroNineThreeOneFiveTwoSixValue,
+          author: textFieldFourZeroNineThreeOneFiveTwoSevenValue,
+          description: textFieldFourZeroNineThreeOneFiveTwoEightValue,
           id: note?.id,
         },
       },
@@ -59,7 +59,7 @@ export default function UIEditNote(props) {
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
-      {...getOverrideProps(overrides, "UIEditNote")}
+      {...getOverrideProps(overrides, "UICreateNote")}
       {...rest}
     >
       <Flex
@@ -142,7 +142,7 @@ export default function UIEditNote(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Edit"
+            children="Create"
             {...getOverrideProps(overrides, "Edit")}
           ></Text>
         </Flex>
@@ -153,7 +153,7 @@ export default function UIEditNote(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider4046607")}
+          {...getOverrideProps(overrides, "Divider40931521")}
         ></Divider>
         <Flex
           gap="16px"
@@ -229,11 +229,13 @@ export default function UIEditNote(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            value={textFieldFourZeroFourSixSixOneTwoValue}
+            value={textFieldFourZeroNineThreeOneFiveTwoSixValue}
             onChange={(event) => {
-              setTextFieldFourZeroFourSixSixOneTwoValue(event.target.value);
+              setTextFieldFourZeroNineThreeOneFiveTwoSixValue(
+                event.target.value
+              );
             }}
-            {...getOverrideProps(overrides, "TextField4046612")}
+            {...getOverrideProps(overrides, "TextField40931526")}
           ></TextField>
           <TextField
             width="unset"
@@ -246,11 +248,13 @@ export default function UIEditNote(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            value={textFieldFourZeroFourSixSixOneThreeValue}
+            value={textFieldFourZeroNineThreeOneFiveTwoSevenValue}
             onChange={(event) => {
-              setTextFieldFourZeroFourSixSixOneThreeValue(event.target.value);
+              setTextFieldFourZeroNineThreeOneFiveTwoSevenValue(
+                event.target.value
+              );
             }}
-            {...getOverrideProps(overrides, "TextField4046613")}
+            {...getOverrideProps(overrides, "TextField40931527")}
           ></TextField>
           <TextField
             width="unset"
@@ -263,11 +267,13 @@ export default function UIEditNote(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            value={textFieldFourZeroFourSixSixOneFourValue}
+            value={textFieldFourZeroNineThreeOneFiveTwoEightValue}
             onChange={(event) => {
-              setTextFieldFourZeroFourSixSixOneFourValue(event.target.value);
+              setTextFieldFourZeroNineThreeOneFiveTwoEightValue(
+                event.target.value
+              );
             }}
-            {...getOverrideProps(overrides, "TextField4046614")}
+            {...getOverrideProps(overrides, "TextField40931528")}
           ></TextField>
         </Flex>
         <Divider
@@ -277,7 +283,7 @@ export default function UIEditNote(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider4046615")}
+          {...getOverrideProps(overrides, "Divider40931529")}
         ></Divider>
         <Button
           width="unset"

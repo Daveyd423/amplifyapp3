@@ -6,8 +6,10 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
-import MyIcon from "./MyIcon";
+import { useState } from "react";
+import { API } from "aws-amplify";
+import { createNote } from "../graphql/mutations";
+import { getOverrideProps, useNavigateAction } from "./utils";
 import {
   Button,
   Divider,
@@ -19,7 +21,32 @@ import {
   View,
 } from "@aws-amplify/ui-react";
 export default function UINewNote(props) {
-  const { overrides, ...rest } = props;
+  const { note, overrides, ...rest } = props;
+  const [
+    textFieldFourZeroNineThreeOneFiveTwoSixValue,
+    setTextFieldFourZeroNineThreeOneFiveTwoSixValue,
+  ] = useState("");
+  const [
+    textFieldFourZeroNineThreeOneFiveTwoSevenValue,
+    setTextFieldFourZeroNineThreeOneFiveTwoSevenValue,
+  ] = useState("");
+  const [
+    textFieldFourZeroNineThreeOneFiveTwoEightValue,
+    setTextFieldFourZeroNineThreeOneFiveTwoEightValue,
+  ] = useState("");
+  const buttonOnClick = async () => {
+    await API.graphql({
+      query: createNote.replaceAll("__typename", ""),
+      variables: {
+        input: {
+          name: textFieldFourZeroNineThreeOneFiveTwoSixValue,
+          author: textFieldFourZeroNineThreeOneFiveTwoSevenValue,
+          description: textFieldFourZeroNineThreeOneFiveTwoEightValue,
+        },
+      },
+    });
+  };
+  const buttonOnMouseOut = useNavigateAction({ type: "url", url: "/" });
   return (
     <Flex
       gap="16px"
@@ -47,20 +74,6 @@ export default function UINewNote(props) {
         padding="24px 24px 24px 24px"
         {...getOverrideProps(overrides, "Content")}
       >
-        <MyIcon
-          width="24px"
-          height="24px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          overflow="hidden"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          type="arrow-right"
-          {...getOverrideProps(overrides, "MyIcon")}
-        ></MyIcon>
         <Flex
           gap="16px"
           direction="row"
@@ -129,7 +142,7 @@ export default function UINewNote(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Create"
-            {...getOverrideProps(overrides, "Create")}
+            {...getOverrideProps(overrides, "Edit")}
           ></Text>
         </Flex>
         <Divider
@@ -139,7 +152,7 @@ export default function UINewNote(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider4046568")}
+          {...getOverrideProps(overrides, "Divider40931521")}
         ></Divider>
         <Flex
           gap="16px"
@@ -187,8 +200,8 @@ export default function UINewNote(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="David Galotto"
-            {...getOverrideProps(overrides, "David Galotto")}
+            children="Upload New Image"
+            {...getOverrideProps(overrides, "Upload New Image")}
           ></Text>
         </Flex>
         <Flex
@@ -207,15 +220,59 @@ export default function UINewNote(props) {
           <TextField
             width="unset"
             height="unset"
+            label="name"
             placeholder="John Doe"
             shrink="0"
             alignSelf="stretch"
-            label=""
             size="default"
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField")}
+            value={textFieldFourZeroNineThreeOneFiveTwoSixValue}
+            onChange={(event) => {
+              setTextFieldFourZeroNineThreeOneFiveTwoSixValue(
+                event.target.value
+              );
+            }}
+            {...getOverrideProps(overrides, "TextField40931526")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="descripition"
+            placeholder="Seattle, WA"
+            shrink="0"
+            alignSelf="stretch"
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            value={textFieldFourZeroNineThreeOneFiveTwoSevenValue}
+            onChange={(event) => {
+              setTextFieldFourZeroNineThreeOneFiveTwoSevenValue(
+                event.target.value
+              );
+            }}
+            {...getOverrideProps(overrides, "TextField40931527")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="image"
+            placeholder="john.doe@awsamplify.com"
+            shrink="0"
+            alignSelf="stretch"
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            value={textFieldFourZeroNineThreeOneFiveTwoEightValue}
+            onChange={(event) => {
+              setTextFieldFourZeroNineThreeOneFiveTwoEightValue(
+                event.target.value
+              );
+            }}
+            {...getOverrideProps(overrides, "TextField40931528")}
           ></TextField>
         </Flex>
         <Divider
@@ -225,7 +282,7 @@ export default function UINewNote(props) {
           alignSelf="stretch"
           size="small"
           orientation="horizontal"
-          {...getOverrideProps(overrides, "Divider4046576")}
+          {...getOverrideProps(overrides, "Divider40931529")}
         ></Divider>
         <Button
           width="unset"
@@ -235,6 +292,12 @@ export default function UINewNote(props) {
           isDisabled={false}
           variation="primary"
           children="Save"
+          onClick={() => {
+            buttonOnClick();
+          }}
+          onMouseOut={() => {
+            buttonOnMouseOut();
+          }}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>

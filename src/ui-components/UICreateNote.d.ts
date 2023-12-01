@@ -17,8 +17,8 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type UINewNoteOverridesProps = {
-    UINewNote?: PrimitiveOverrideProps<FlexProps>;
+export declare type UICreateNoteOverridesProps = {
+    UICreateNote?: PrimitiveOverrideProps<FlexProps>;
     Content?: PrimitiveOverrideProps<FlexProps>;
     "Edit Profile"?: PrimitiveOverrideProps<FlexProps>;
     Icon?: PrimitiveOverrideProps<ViewProps>;
@@ -35,9 +35,9 @@ export declare type UINewNoteOverridesProps = {
     Divider40931529?: PrimitiveOverrideProps<DividerProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
-export declare type UINewNoteProps = React.PropsWithChildren<Partial<FlexProps> & {
+export declare type UICreateNoteProps = React.PropsWithChildren<Partial<FlexProps> & {
     note?: any;
 } & {
-    overrides?: UINewNoteOverridesProps | undefined | null;
+    overrides?: UICreateNoteOverridesProps | undefined | null;
 }>;
-export default function UINewNote(props: UINewNoteProps): React.ReactElement;
+export default function UICreateNote(props: UICreateNoteProps): React.ReactElement;
